@@ -1,7 +1,7 @@
 class MyHashSet {
-  ArrayList map;
+  ArrayList map = new ArrayList<>();
     public MyHashSet() {
-        map = new ArrayList<>(); 
+          
     }
     
     public void add(int key) {
