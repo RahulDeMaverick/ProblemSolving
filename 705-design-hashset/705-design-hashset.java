@@ -1,5 +1,5 @@
 class MyHashSet {
- static ArrayList map;
+  ArrayList map;
     public MyHashSet() {
         map = new ArrayList<>(); 
     }
