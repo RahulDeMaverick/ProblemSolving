@@ -11,7 +11,7 @@ class Solution {
         int low =0;
         int high =1;
         while(target > reader.get(high)){
-            low++;
+            low=high;
             high = high*2 ; 
         }
         while(low<=high){
