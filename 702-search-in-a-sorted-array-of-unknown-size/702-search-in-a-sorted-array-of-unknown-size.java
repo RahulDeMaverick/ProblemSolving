@@ -15,7 +15,7 @@ class Solution {
             high = high*2 ; 
         }
         while(low<=high){
-            int mid = (low+high)/2;
+            int mid =low+ (high-low)/2;
              int temp=reader.get(mid);
             if(temp== target){
                 return mid;
