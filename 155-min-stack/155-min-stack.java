@@ -28,7 +28,7 @@ class MinStack {
     }
     
     public int getMin() {
-        return minst.peek();
+        return min;
     }
 }
 
