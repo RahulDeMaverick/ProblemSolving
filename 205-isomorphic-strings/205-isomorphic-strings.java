@@ -4,7 +4,7 @@ class Solution {
         if(s.length() != t.length()) return false;
         
         HashMap<Character,Character> sMap = new HashMap<>();
-        HashMap<Character,Character> tMap = new HashMap<>();
+        HashSet<Character> tSet = new HashSet<>();
         
         for(int i=0;i<s.length();i++){
             
@@ -14,17 +14,13 @@ class Solution {
             if(sMap.containsKey(sChar)){
                 if(sMap.get(sChar) != tChar) return false;
             } else{
+                if(tSet.contains(tChar)) return false;
+                    else{
                 sMap.put(sChar,tChar);
+                tSet.add(tChar);
+                    }
             }
-            
-            if(tMap.containsKey(tChar)){
-                if(tMap.get(tChar) != sChar) return false;
-                
-            }else{
-                tMap.put(tChar,sChar);
-            }
-            
-          
+
         }
         
           return true;
