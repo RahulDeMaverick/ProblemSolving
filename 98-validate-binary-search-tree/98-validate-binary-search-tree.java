@@ -14,27 +14,22 @@
  * }
  */
 class Solution {
-
-
-    
     public boolean isValidBST(TreeNode root) {
-        
-      boolean res=  reccur(root,null,null);
-        return res;
-        
-    }
-    
-    private boolean reccur(TreeNode root,Integer min, Integer max){
-        
-        if(root==null) return true;
-        
-        if(max !=null && root.val >= max) return false;
-        if(min !=null && min >=root.val) return false;
-
-        
-    return reccur(root.left,min,root.val) &&
-        reccur(root.right,root.val,max);
-    
-        
+        Stack<TreeNode> st = new Stack<>();
+        TreeNode prev = null;
+        while(!st.isEmpty() || root!= null){
+            while(root!= null){
+               st.push(root);
+                root= root.left;
+            }
+            root = st.pop();
+            if(prev!= null && prev.val >= root.val)
+            {
+                return false;
+            }
+            prev = root;
+            root = root.right;
+        }
+        return true;
     }
 }
