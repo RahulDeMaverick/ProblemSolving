@@ -22,19 +22,17 @@ class Solution {
     }
     
     private void helper(TreeNode root,int curr){
-        
+          //base
         if(root== null) return;
-        curr = curr*10+root.val;
-        System.out.println(root.val);
-        System.out.println(curr);
+       
+
         if(root.left== null && root.right== null) {
-            result+= curr;
+            result+= curr*10+root.val;
         }
-        //base
-        
+      
         //logic
-        helper(root.left,curr);
-        helper(root.right,curr);
+        helper(root.left,curr*10+root.val);
+        helper(root.right,curr*10+root.val);
         
         
     }
