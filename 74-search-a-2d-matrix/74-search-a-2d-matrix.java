@@ -1,22 +1,33 @@
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {   
         if(matrix==null || matrix.length==0) return false;
-        
-        int m= matrix.length;
-        int n= matrix[0].length;
-        int low=0;
-        int high=m*n-1;
-        
-        while(low<=high){
-            int mid= low+(high-low)/2;
-            int r= mid/n;
-            int c= mid%n;
-            if(matrix[r][c]==target) return true;
-            else if(matrix[r][c]< target) low= mid+1;
-            else high=mid-1;
-             
+          boolean flag = false;
+        for(int i=0;i<matrix.length;i++){
+
+            flag = binary(matrix[i],target);
+            if(flag == true)
+            break; 
         }
-        
-        return false;
+        return flag;
+    }
+    
+    private boolean binary(int[] nums,int target){
+         int start = 0;
+            int end = nums.length-1;
+            
+            while(start <= end ){
+                int mid = (start+end)/2;
+
+                if (nums[mid] == target){
+                    return true;
+                }
+                else if (nums[mid] < target) {
+                    start = mid + 1;
+                }
+                else{
+                    end = mid - 1;
+                }
+            }
+            return false;
     }
 }
