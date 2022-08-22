@@ -16,12 +16,17 @@ class Solution {
         }
   
         //logic
-        
         //not choose:
-        helper(candidates,i+1,amount,path);
+        helper(candidates,i+1,amount,path);// not chosing increment the index 
         
-        path.add(candidates[i]);
-        helper(candidates,i,amount-candidates[i],path);
-        path.remove(path.size()-1);
+        //choose
+        //action
+        path.add(candidates[i]);//adding the path 
+        
+        //recurse
+        helper(candidates,i,amount-candidates[i],path);//  chosing  dont increment the index  as it can have repeated value
+        
+        //backtrack
+        path.remove(path.size()-1); // removing the path
     }
 }
