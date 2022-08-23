@@ -45,7 +45,7 @@ class Solution {
            y_parent = parent; 
             y_depth = depth;
         }
-        
+        // optimization if x parent and y parent are found stop the recursion
         if(x_parent == null || y_parent == null) {
         helper(root.left,x,y,root,depth+1);
         helper(root.right,x,y,root,depth+1);
