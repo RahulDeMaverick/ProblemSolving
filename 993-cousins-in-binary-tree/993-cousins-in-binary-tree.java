@@ -15,6 +15,9 @@
  */
 //Dfs solution
 //nodes should be of same level but different parents
+
+//TC: o(n)
+//SC: o(h) height of the tree
 class Solution {
     TreeNode x_parent;
     TreeNode y_parent;
@@ -43,7 +46,9 @@ class Solution {
             y_depth = depth;
         }
         
+        if(x_parent == null || y_parent == null) {
         helper(root.left,x,y,root,depth+1);
         helper(root.right,x,y,root,depth+1);
+        }
     }
 }
