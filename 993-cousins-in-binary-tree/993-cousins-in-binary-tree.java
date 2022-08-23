@@ -13,6 +13,8 @@
  *     }
  * }
  */
+//Dfs solution
+//nodes should be of same level but different parents
 class Solution {
     TreeNode x_parent;
     TreeNode y_parent;
@@ -21,6 +23,7 @@ class Solution {
     public boolean isCousins(TreeNode root, int x, int y) {
         if(root == null) return false;
         helper(root,x,y,null,0);
+        //return true if these conditon satisfies
         return x_parent != y_parent && x_depth == y_depth;
     }
     
@@ -28,11 +31,13 @@ class Solution {
         
         if(root == null) return;
         
+        //if x is found set x parent and x depth;
         if(root.val ==x){
            x_parent = parent; 
             x_depth = depth;
         }
         
+         //if x is found set y parent and y depth;
          if(root.val ==y){
            y_parent = parent; 
             y_depth = depth;
