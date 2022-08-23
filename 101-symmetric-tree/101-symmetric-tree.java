@@ -39,9 +39,10 @@ class Solution {
             flag= false;
             return;
         }
-        
+        if(flag)
         dfs(left.left, right.right);
         //stack.pop();
+        if(flag)
         dfs(left.right,right.left);
               //stack.pop();
           
