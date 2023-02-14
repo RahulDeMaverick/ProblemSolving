@@ -1,6 +1,10 @@
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         
+        /*
+        Assume a imaginary array and calculate column index and row index and do binary search in the imaginary array. always do row index and column index on column. that is n
+        */
+        
         if(matrix == null || matrix.length == 0) return false;
         int m= matrix.length; int n = matrix[0].length;
         int low = 0; int high = m*n-1;
