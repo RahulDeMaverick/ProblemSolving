@@ -16,12 +16,19 @@
 class Solution {
     public TreeNode invertTree(TreeNode root) {
         
+        //recurrsive solution
+        
+        //base condition
         if(root == null) return null;
         
+        //right traversal
         TreeNode right = invertTree(root.right);
+        //left traversal
         TreeNode left = invertTree(root.left);
         
+        //assign right side tree to root.left 
         root.left = right;
+        //assign left side tree to root.right 
         root.right = left;
         return root;
         
