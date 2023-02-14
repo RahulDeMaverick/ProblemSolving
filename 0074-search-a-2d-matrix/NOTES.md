@@ -1,1 +1,1 @@
-​
+Assume a imaginary array and calculate column index and row index and do binary search in the imaginary array. always do row index and column index on column. that is n
