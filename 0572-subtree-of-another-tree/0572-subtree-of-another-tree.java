@@ -18,7 +18,8 @@ class Solution {
         
         if(root == null || subRoot == null) return false;  
         boolean flag = isSameTree(root,subRoot);
-        if(flag == true) return flag;       
+        if(flag == true) return flag;   
+        //recursively call is same tree funtion for all the nodes in the root tree
         return isSubtree(root.left,subRoot) || isSubtree(root.right,subRoot);
 
     }
