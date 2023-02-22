@@ -9,6 +9,33 @@ class Employee {
 
 class Solution {
     HashMap<Integer,Employee> map;
+    
+    public int getImportance(List<Employee> employees, int id) {
+        int result = 0;
+        map = new HashMap<>();
+        Queue<Employee> q = new LinkedList<>();
+        for(Employee e : employees){
+            map.put(e.id,e);
+        }
+        q.add(map.get(id));
+        while(!q.isEmpty()){
+            Employee e = q.poll();
+            result += e.importance;
+            for(int subID : e.subordinates){
+                Employee subemp = map.get(subID);
+                q.add(subemp);
+            }
+        }
+        return result;        
+    
+
+    }
+}
+
+//DFS Solution
+/*
+class Solution {
+    HashMap<Integer,Employee> map;
     int result;
     public int getImportance(List<Employee> employees, int id) {
         map = new HashMap<>();
@@ -27,3 +54,4 @@ class Solution {
         }
     }
 }
+*/
