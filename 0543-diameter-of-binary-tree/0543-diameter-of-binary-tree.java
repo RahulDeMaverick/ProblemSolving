@@ -16,7 +16,6 @@
 class Solution {
     int diameter =0;
     public int diameterOfBinaryTree(TreeNode root) { 
-        
         inorder(root);  
         return diameter;
         
@@ -24,11 +23,12 @@ class Solution {
     
     private int inorder(TreeNode root){
         //base
-        if(root == null) return 0;        
+        if(root == null) return -1;        
         //logic
         int left = inorder(root.left);
         int right = inorder(root.right);  
-        diameter = Math.max(diameter,left+right);
+        diameter = Math.max(diameter,(left+right)+2);
+
         
         return Math.max(left,right) +1;
         
