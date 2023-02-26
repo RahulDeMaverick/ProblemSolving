@@ -33,7 +33,9 @@ class Solution {
     private int dfs(TreeNode root){
 
         if(root == null) return 1;
+        int left = dfs(root.left);
+        int right = dfs(root.right);
 
-        return Math.max(dfs(root.left),dfs(root.right)) +1;
+        return Math.max(left,right) +1;
     }
 }
