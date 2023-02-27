@@ -5,7 +5,7 @@ class Solution {
         for(int i : nums)
           {
             map.put(i, map.getOrDefault(i,0)+1);
-            
+
         }
           for(int i :nums){
               if(map.get(i) ==1)
@@ -15,6 +15,5 @@ class Solution {
 }            
          return 0;
         }
-       
-    
+
 }
