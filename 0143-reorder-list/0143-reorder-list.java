@@ -8,20 +8,26 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
+// The solution for this problem is first find the mid of the list
+//reverse the second half of the list
 class Solution {
     public void reorderList(ListNode head) {
         
         //find mid of the list
+         ListNode slow = head;
+         ListNode fast = head;
         
-    ListNode slow = head;
-    ListNode fast = head;
-        
+        //to find mid move the slow pointer by 1 and fast pinter by two 
+        // fast.next is for odd sized list and fast.next.next is for even sized list
         while(fast.next != null && fast.next.next != null){
             slow = slow.next;
             fast = fast.next.next;      
         }
         
+        //reverse the list and point head of the reversed list to fast pointer
         fast = reverseList(slow.next);
+        // make the slow pointer 
         slow.next = null;
         slow = head;
         //merging two lists
@@ -31,15 +37,11 @@ class Solution {
             slow.next = fast;
             fast = fast.next;
             slow.next.next = temp;
-            slow = temp;
-            
-        }
-        
-        
-        
-        
-    }
+            slow = temp;          
+        }   
+    }    
     
+        //reverse the second half of the list 
         public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode current = head;
