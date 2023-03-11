@@ -15,6 +15,7 @@ class Solution {
             if(i[0] > end){ //no overlap
                 //create a new int array 
             result.add(new int[] {start,end});
+                //update the start and end pointers
             start = i[0];
             end = i[1];
             }
