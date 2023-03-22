@@ -18,6 +18,7 @@ class Solution {
                 
                 //check if denomination is less the coin
                 if(j < coins[i-1]){
+                    //why i-1 is we are adding dummy row so i-1 gives the correct position
                     dp[i][j] = dp[i-1][j];
                 }else{
                     dp[i][j] = Math.min(dp[i-1][j], 1 + dp[i][j-coins[i-1]]); // compare the previous one and 
