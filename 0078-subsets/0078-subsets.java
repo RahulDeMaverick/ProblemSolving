@@ -16,13 +16,16 @@ class Solution {
         }
         
         //logic
+        
         //dont choose
         helper(nums,i+1,path);
         
         //choose
+        //action
         path.add(nums[i]);
-        helper(nums,i+1,path);
+        helper(nums,i+1,path); //recurse
         
+        //backtrack
         path.remove(path.size()-1);
     }
 }
