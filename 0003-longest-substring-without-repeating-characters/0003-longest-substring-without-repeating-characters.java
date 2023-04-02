@@ -6,10 +6,10 @@ class Solution {
         for(int i=0;i<s.length();i++){
             char c = s.charAt(i);
             if(map.containsKey(c)){
-                slow = Math.max(slow, map.get(c));
+                slow = Math.max(slow, map.get(c)+1);
             }
             max = Math.max(max,i-slow+1);
-            map.put(c,i+1);
+            map.put(c,i);
         }
         return max;
     }
