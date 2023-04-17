@@ -25,7 +25,7 @@ class MyStack {
     }
     
     public int top() {
-        return this.top;
+        return top;
         
     }
     
