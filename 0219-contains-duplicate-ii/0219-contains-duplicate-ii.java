@@ -6,8 +6,7 @@ class Solution {
             if(!map.containsKey(nums[i])){
                 map.put(nums[i],i);
             }else{
-                int temp = map.get(nums[i]);
-                if(Math.abs(temp-i) <= k){
+                if(Math.abs(map.get(nums[i])-i) <= k){
                    flag = true; 
                 }else{
                     map.put(nums[i],i);
