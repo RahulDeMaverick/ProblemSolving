@@ -7,7 +7,7 @@ class Solution {
     record the i and j
     in second pass replace the i and j to 0
     
-    Why we need two pass
+    Why we need two pass?
      as we might have moved from the element in first pass before finding the 0th element we cant change them
      so we are recording the i and j and doing it in second pass
     */
