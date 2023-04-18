@@ -21,6 +21,7 @@ class Solution {
         q.add(root);
         while(!q.isEmpty()){
             int size= q.size();
+            //maintaining result at the every level.. we just need sum at the last level so we are changing the result to 0
             result=0;
             for(int i =0;i<size;i++){
             TreeNode curr = q.poll();
