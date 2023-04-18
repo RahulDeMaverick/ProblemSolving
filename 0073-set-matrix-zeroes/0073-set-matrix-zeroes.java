@@ -1,4 +1,16 @@
 class Solution {
+    //TC: O(M*N)
+    //SC: O(M+N)
+    //approch
+    /*
+    in first pass find the i and j where the element is 0
+    record the i and j
+    in second pass replace the i and j to 0
+    
+    Why we need two pass
+     as we might have moved from the element in first pass before finding the 0th element we cant change them
+     so we are recording the i and j and doing it in second pass
+    */
     public void setZeroes(int[][] matrix) {
         
     int R = matrix.length;
