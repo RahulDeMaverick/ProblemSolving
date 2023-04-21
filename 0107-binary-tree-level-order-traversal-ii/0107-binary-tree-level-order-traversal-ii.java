@@ -29,9 +29,8 @@ class Solution {
                 if(curr.right != null) q.add(curr.right);
                 
             }
-            result.add(list);
+            result.add(0,list);
         }
-        Collections.reverse(result);
         return result;
     }
 }
