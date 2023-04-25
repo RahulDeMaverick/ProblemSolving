@@ -2,6 +2,7 @@ class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
         ArrayList<Integer> list = new ArrayList<>();
         HashSet<Integer> set = new HashSet<>();
+        int idx =0;
         for(int i : nums1){
             set.add(i);
         }
@@ -12,6 +13,6 @@ class Solution {
             }
         }
          int[] arr = list.stream().mapToInt(i -> i).toArray();
-        return arr;
+         return arr;
     }
 }
