@@ -15,11 +15,11 @@ class Solution {
                     result.add(sb.toString());
                 }
                 sb.setLength(0);
-                start = nums[i + 1];
-                end = nums[i + 1];
+                start = nums[i+1];
+                end = nums[i+1];
             }
             else {
-                end = nums[i + 1];
+                end = nums[i+1];
             }
                 
             }
