@@ -4,11 +4,9 @@ class Solution {
         HashMap<Character,Integer> map = new HashMap<>();
         
         for(char c : magazine.toCharArray()){
-            if(map.containsKey(c)){
-                map.put(c,map.get(c)+1);
-            }else{
-                map.put(c,1);
-            }
+
+                map.put(c,map.getOrDefault(c,0)+1);
+
         }
         int len = ransomNote.length();
         for(char c: ransomNote.toCharArray()){
