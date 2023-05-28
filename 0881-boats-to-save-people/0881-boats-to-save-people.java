@@ -8,8 +8,6 @@ class Solution {
             if(people[low] + people[high] <= limit)
                 low++;
                 high--;
-            
-            
         }
         return result;
     }
