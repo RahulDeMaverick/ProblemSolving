@@ -10,14 +10,15 @@ class Logger {
             map.put(message,timestamp);
                 return true;
         }
-        
-        int stamp = map.get(message);
-        int validStamp = stamp+10;
-        if(timestamp >= validStamp){
-            map.put(message,timestamp);
-            return true;
-        }else{return false;}
-    
+        else{
+            int stamp = map.get(message);
+            int validStamp = stamp+10;
+            if(timestamp >= validStamp){
+                map.put(message,timestamp);
+                return true;
+            }
+        }
+        return false;
     }
 }
 
