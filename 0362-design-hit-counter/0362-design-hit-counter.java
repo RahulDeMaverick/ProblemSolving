@@ -13,13 +13,13 @@ class HitCounter {
     
     public int getHits(int timestamp) {
         while(!q.isEmpty())
-{        if(timestamp - q.peek() >= 300){
+        { 
+            if(timestamp - q.peek() >= 300){
             q.remove();
-        }else{
-    break;
-}
-
-}
+            }else{
+                break;
+            }
+        }
         return q.size();
     }
 }
